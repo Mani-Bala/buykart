@@ -20,4 +20,6 @@ jobs:
         ./gradlew build
         var=$(cut -d/ -f3 <<< $GITHUB_REF)
     - name: Sonarqube Check
-      run: echo "setup has to be completed"
+      run: ./gradlew sonarqube -Dsonar.pullrequest.key=$(cut -d/ -f3 <<< $GITHUB_REF) -Dsonar.pullrequest.branch=$GITHUB_HEAD_REF -Dsonar.pullrequest.base=$GITHUB_BASE_REF
+    - name: Spencer
+      run: echo "SpencerBharath"
